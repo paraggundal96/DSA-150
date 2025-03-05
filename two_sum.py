@@ -1,11 +1,15 @@
-class Solution:
-    def two_sum(arr,target):
+from typing import List
 
-        for i in range(len(arr)):
-            key = target - arr[i]
-            for j in range(i+1,len(arr)):
-                if(arr[j]==key):
-                    return [i,j]
-        return -1
+class Solution:
+    def two_sum(self, nums: List[int], target: int) -> List[int]:
+        key_dict = {}
+        for i in range(len(nums)):
+            key = target - nums[i]
+            if key in key_dict.keys():
+                return [key_dict[key],i]
+            key_dict.update({nums[i]:i})
+        return []
+            
         
-print(Solution.two_sum([1,2,3,4,5],9))
+obj = Solution()
+print(obj.two_sum([1,2,4,5,6],10))
