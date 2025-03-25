@@ -1,6 +1,4 @@
 
-from typing import List
-
 class Solution:
     def longest_substring(self, characters: str) -> int:
         ind_dict = {}
